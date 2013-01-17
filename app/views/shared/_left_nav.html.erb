@@ -1,0 +1,20 @@
+<% request.xhr? ? options = { data: { remote: true, update: 'content'} } : options = {} %>
+
+<ul class="nav nav-list">
+  <li><%= link_to "Home", root_path, options %></li>
+  <li class="<%= "active" if controller.controller_name == "descriptions"%>">
+     <%= link_to "Description", descriptions_index_path, options %>
+  </li>
+  <li class="<%= "active" if controller.controller_name == "directions"%>">
+    <%= link_to "Directions", directions_index_path, options %>
+  </li>
+  <li class="<%= "active" if controller.controller_name == "availabilities"%>">
+    <%= link_to "Availability", availabilities_index_path, options %>
+  </li>
+  <li class="<%= "active" if controller.controller_name == "info" && controller.action_name == "terms" %>">
+    <%= link_to "Terms", info_terms_path, options %>
+  </li>
+  <li class="<%= "active" if controller.controller_name == "contacts" %>">
+    <%= link_to "Contact Us", contacts_index_path %>
+  </li>
+</ul>

@@ -1,0 +1,31 @@
+<!-- Start header -->
+<header class="header">
+  <div class="container">
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="brand-wrapper">
+          <a class="brand" href="<%= url_for root_path %>"><i class="icon-check-empty"></i> ROUN<span>DE</span></a>
+        </div>
+        <ul class="nav">
+          <li><%= link_to "Home", root_path %></li>
+          <li class="<%= "active" if controller.controller_name == "descriptions"%>">
+            <%= link_to "Description", descriptions_index_path %>
+          </li>
+          <li class="<%= "active" if controller.controller_name == "directions"%>">
+            <%= link_to "Directions", directions_index_path %>
+          </li>
+          <li class="<%= "active" if controller.controller_name == "availabilities"%>">
+            <%= link_to "Availability", availabilities_index_path %>
+          </li>
+          <li class="<%= "active" if controller.controller_name == "info" && controller.action_name == "terms" %>">
+            <%= link_to "Terms", info_terms_path %>
+          </li>
+          <li class="<%= "active" if controller.controller_name == "contacts" %>">
+            <%= link_to "Contact Us", contacts_index_path %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- End header --> 

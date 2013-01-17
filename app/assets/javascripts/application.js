@@ -12,4 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
+//= require jquery.onecarousel.min
+//= require jquery.tweet
+//= require jflickrfeed.min
+//= require jquery.prettyPhoto
+//= require jquery.fitvids
+//= require jquery.isotope.min
 //= require_tree .

@@ -1,0 +1,5 @@
+development:
+  domain: rentify.com
+
+test:
+  domain: example.com
