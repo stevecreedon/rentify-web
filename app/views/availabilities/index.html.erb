@@ -1,6 +1,5 @@
 <% unless request.xhr? %>
   <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
-  <%= render 'shared/slider' %>
 <% end %>
 <!-- Start availabilities -->
 <section class="availabilities" id='content'>
@@ -19,6 +18,8 @@
           <h3><%= article.title %></h3>
           <%= article.description %>
         <% end %>
+        <hr>
+        <div id='calendar' data-path='<%= @calendar.path %>'></div>
       </div>
     </div>
   </div>

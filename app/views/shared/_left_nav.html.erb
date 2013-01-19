@@ -2,8 +2,13 @@
 
 <ul class="nav nav-list">
   <li><%= link_to "Home", root_path, options %></li>
+<!--
   <li class="<%= "active" if controller.controller_name == "descriptions"%>">
      <%= link_to "Description", descriptions_index_path, options %>
+  </li>
+-->
+  <li class="<%= "active" if controller.controller_name == "photos"%>">
+     <%= link_to "Photos", photos_path %>
   </li>
   <li class="<%= "active" if controller.controller_name == "directions"%>">
     <%= link_to "Directions", directions_index_path, options %>

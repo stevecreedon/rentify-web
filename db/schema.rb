@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130117114724) do
+ActiveRecord::Schema.define(:version => 20130119131652) do
 
   create_table "addresses", :force => true do |t|
     t.string   "address"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(:version => 20130117114724) do
   end
 
   add_index "articles", ["source_type", "source_id"], :name => "index_articles_on_source_type_and_source_id"
+
+  create_table "calendars", :force => true do |t|
+    t.string   "path"
+    t.string   "provider"
+    t.boolean  "enabled"
+    t.integer  "property_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "calendars", ["property_id"], :name => "index_calendars_on_property_id"
+  add_index "calendars", ["provider", "property_id"], :name => "index_calendars_on_provider_and_property_id"
 
   create_table "directions", :force => true do |t|
     t.string   "title"

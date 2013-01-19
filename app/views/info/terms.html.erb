@@ -1,6 +1,5 @@
 <% unless request.xhr? %>
-  <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
-  <%= render 'shared/slider' %>
+  <%= render partial: 'shared/welcome_message', locals: { message: '- Terms and Conditions -' } %>
 <% end %>
 <!-- Start terms -->
 <section class="terms" id='content'>

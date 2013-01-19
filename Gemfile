@@ -13,6 +13,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 gem "animate-rails", git: 'git://github.com/camelmasa/animate-rails.git'  # animate.css
 gem "therubyracer"

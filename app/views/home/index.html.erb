@@ -1,7 +1,46 @@
 <% unless request.xhr? %>
   <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
-  <%= render 'shared/slider' %>
 <% end %>
+<!-- Start portfolio -->
+<section class="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="span8">
+        <div class="img-polaroid portfolio-item">
+          <img src="/assets/property/01.jpg" />
+          <div class="folio-body">
+            <div class="folio-info">
+              <h5><%= @property.title %></h5>
+              <%= @property.description %>
+            </div>
+            <div class="folio-zoom">
+              <%= link_to 'Show all photos', photos_path %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span4">
+        <div class="project-widget well info-box">
+           <iframe marginheight="0" marginwidth="0" frameborder="0" height="490px" scrolling="no" width="330px"
+                   src="http://maps.google.com/maps?oe=utf-8&amp;client=firefox-a&amp;q=uttara&amp;ie=UTF8&amp;hq=uttara&amp;hnear=&amp;t=m&amp;ll=37.262153,-79.942041&amp;spn=0.006295,0.006295&amp;output=embed"></iframe>
+        </div>
+      </div>
+      <div class='span12'>
+        <h4>Description</h4>
+        <hr>
+        <%= @property.description %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End portfolio -->
+<!-- Start page header -->
+<section class="section-page-header">
+  <div class="container">
+    <img src="/assets/divider_shadow.png" title="" alt="">
+  </div>
+</section>
+<!-- End page header -->
 <!-- Start services -->
 <section class="services" id='content'>
   <div class="container">
@@ -9,9 +48,9 @@
       <div class="span3">
         <div class="well well-small">
           <span class="service-icon"><i class="icon-resize-full"></i></span>
-          <h5>Description</h5>
+          <h5>Photos</h5>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam vehicula ut id elit.</p>
-          <%= link_to "Read More", descriptions_index_path, data: { remote: true, update: 'content'}, class: 'btn btn-mini' %>
+          <%= link_to "Read More", photos_path, class: 'btn btn-mini' %>
         </div>
       </div>
       <div class="span3">

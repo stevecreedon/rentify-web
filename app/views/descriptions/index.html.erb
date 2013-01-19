@@ -1,6 +1,5 @@
 <% unless request.xhr? %>
-  <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
-  <%= render 'shared/slider' %>
+  <%= render partial: 'shared/welcome_message', locals: { message: '- Descriptions -' } %>
 <% end %>
 <!-- Start description -->
 <section class="description" id='content'>
