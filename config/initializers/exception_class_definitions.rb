@@ -1,0 +1,1 @@
+class SiteNotFound < Exception; end

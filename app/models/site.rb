@@ -1,5 +1,5 @@
 class Site < ActiveRecord::Base
-  attr_accessible :domain, :subdomain, :style, :title, :address_id
+  attr_accessible :domain, :subdomain, :style, :title, :address_id, :email, :phone
 
   belongs_to  :address
 

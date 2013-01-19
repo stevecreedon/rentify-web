@@ -1,0 +1,72 @@
+<%= render partial: 'shared/welcome_message', locals: { message: '- Contact Us -' } %>
+<!-- Start contact -->
+<section class="contact">
+  <div class="container">
+    <div class="row">
+      <div class="span4 our-office">
+        <h4>CONTACT DETAILS</h4>
+        <hr>
+        <dl>
+          <% if current_site.address %>
+            <dt>Our Location:</dt>
+            <dd>
+              <%= current_site.address.address %><%= ", #{current_site.address.address2}" if current_site.address.address2 %><br>
+              <%= current_site.address.city %>, <%= current_site.address.state %>, <%= current_site.address.post_code %><br>
+              <%= current_site.address.country %>
+            </dd>
+          <% end %>
+          <% if current_site.phone %>
+            <dt>Telephone:</dt>
+            <dd>
+              <%= current_site.phone %>
+            </dd>
+          <% end %>
+          <% if current_site.email %>
+            <dt>E-mail:</dt>
+            <dd><a href="mailto:<%= current_site.email %>"><%= current_site.email %></a></dd>
+          <% end %>
+        </dl>
+      </div>
+      <div class="span8 contact-form">
+        <h4>SEND US A MESSAGE</h4>
+        <hr>
+        <%= form_for(@contact, url: contacts_path, html: {:name => 'contactform'}) do |f| %>
+          <% if @contact.errors.any? %>
+            <div class="error" style='color:#a00;'>
+              We are very sorry, but there were error(s) found with the form you submitted.<br/>
+              These errors appear below.<br /><br />
+              <ul>
+                <% @contact.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="row">
+            <div class="span4">
+              <%= f.label :name %>
+              <%= f.text_field :name, class: 'span4' %>
+            </div>
+            <div class="span4">
+              <%= f.label :email %>
+              <%= f.email_field :email, class: 'span4' %>
+            </div>
+            <div class="span8">
+              <%= f.label :subject %>
+              <%= f.text_field :subject, class: 'span8' %>
+            </div>
+            <div class="span8">
+              <%= f.label :message %><br />
+              <%= f.text_area :message, class: 'span8', rows: '8' %>
+            </div>  
+            <div class="span8">
+              <%= f.submit 'Submit message', class: 'btn btn-success' %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End contact -->
+

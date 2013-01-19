@@ -1,7 +1,10 @@
 RentifyWeb::Application.routes.draw do
 
-  get "contacts/index"
+  resources :contacts, :only => [:new, :create]
+
   get "info/terms"
+  get "info/site_not_found"
+
   get "availabilities/index"
   get "directions/index"
   get "descriptions/index"

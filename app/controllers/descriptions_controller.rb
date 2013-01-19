@@ -1,5 +1,7 @@
 class DescriptionsController < ApplicationController
   def index
+    @property = current_site.try(:properties).try(:first)
+
     if request.xhr?
       render layout: false
     else

@@ -5,4 +5,8 @@ class Property < ActiveRecord::Base
   has_one  :address
 
   has_many :directions
+
+  has_many :articles, conditions: { source_type: 'property' },
+                      foreign_key: 'source_id',
+                      dependent: :destroy
 end

@@ -38,6 +38,8 @@ ActiveRecord::Schema.define(:version => 20130117114724) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "articles", ["source_type", "source_id"], :name => "index_articles_on_source_type_and_source_id"
+
   create_table "directions", :force => true do |t|
     t.string   "title"
     t.text     "description"
@@ -55,17 +57,18 @@ ActiveRecord::Schema.define(:version => 20130117114724) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "properties", ["site_id"], :name => "index_properties_on_site_id"
+
   create_table "sites", :force => true do |t|
     t.string   "title"
     t.string   "subdomain"
     t.string   "domain"
     t.string   "style"
+    t.string   "email"
+    t.string   "phone"
     t.integer  "address_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  add_index "sites", ["domain"], :name => "index_sites_on_domain"
-  add_index "sites", ["subdomain"], :name => "index_sites_on_subdomain"
 
 end

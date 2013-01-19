@@ -1,5 +1,5 @@
 <% unless request.xhr? %>
-  <%= render partial: 'shared/welcome_message', locals: { message: 'Some property name' } %>
+  <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
   <%= render 'shared/slider' %>
 <% end %>
 <!-- Start services -->
@@ -35,7 +35,7 @@
           <span class="service-icon"><i class="icon-ok"></i></span>
           <h5>Contact Us</h5>
           <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam vehicula ut id elit.</p>
-          <%= link_to "Read More", contacts_index_path, class: 'btn btn-mini' %>
+          <%= link_to "Read More", new_contact_path, class: 'btn btn-mini' %>
         </div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 <% unless request.xhr? %>
-  <%= render partial: 'shared/welcome_message', locals: { message: 'Some property name' } %>
+  <%= render partial: 'shared/welcome_message', locals: { message: @property.title } %>
   <%= render 'shared/slider' %>
 <% end %>
 <!-- Start directions -->
@@ -16,25 +16,10 @@
       </div>
       <div class="span9">
         <h3>How to find us</h3>
-        <h4>By train</h4>
-        <p>Nunc consectetur, nisl non pulvinar blandit, lorem orci egestas
-        quam, ac egestas nibh mauris vel lectus. Morbi vulputate sem sed
-        enim iaculis dictum. Praesent quis quam at neque venenatis porta.
-        Nulla non rutrum eros. Nulla condimentum mollis odio ac pretium.
-        fames ac turpis egestas. Pellentesque habitant morbi tristique
-        senectus et netus et malesuada fames ac turpis egestas. Nulla
-        commodo sapien ut orci facilisis nec dignissim metus suscipit.</p> 
-        <h4>By bus</h4>
-        <p>Nunc consectetur, nisl non pulvinar blandit, lorem orci egestas
-        quam, ac egestas nibh mauris vel lectus. Morbi vulputate sem sed
-        enim iaculis dictum. Praesent quis quam at neque venenatis porta.
-        Nulla non rutrum eros. Nulla condimentum mollis odio ac pretium.
-        Curabitur egestas convallis fermentum. Sed in mauris sit amet arcu
-        at felis. Vestibulum sed erat orci, quis eleifend dui.
-        Pellentesque habitant morbi tristique senectus et netus et malesuada
-        fames ac turpis egestas. Pellentesque habitant morbi tristique
-        senectus et netus et malesuada fames ac turpis egestas. Nulla
-        commodo sapien ut orci facilisis nec dignissim metus suscipit.</p> 
+        <% @property.directions.each do | direction | %>
+          <h3><%= direction.title %></h3>
+          <%= direction.description %>
+        <% end %>
       </div>
     </div>
   </div>

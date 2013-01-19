@@ -21,6 +21,8 @@ gem "twitter-bootstrap-rails"
 
 gem 'configatron'
 
+gem 'mail_form' # gem helps to create contact form
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'

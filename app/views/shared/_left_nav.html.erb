@@ -1,4 +1,4 @@
-<% request.xhr? ? options = { data: { remote: true, update: 'content'} } : options = {} %>
+<% options = { data: { remote: true, update: 'content'} } %>
 
 <ul class="nav nav-list">
   <li><%= link_to "Home", root_path, options %></li>
@@ -15,6 +15,6 @@
     <%= link_to "Terms", info_terms_path, options %>
   </li>
   <li class="<%= "active" if controller.controller_name == "contacts" %>">
-    <%= link_to "Contact Us", contacts_index_path %>
+    <%= link_to "Contact Us", new_contact_path %>
   </li>
 </ul>
