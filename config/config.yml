@@ -1,3 +1,6 @@
+production:
+  domain: kuztus.com
+
 development:
   domain: rentify.com
 
