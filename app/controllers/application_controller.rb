@@ -29,7 +29,11 @@ protected
 private
 
   def set_layout
-    current_site.style || 'style_01'
+    if request.xhr? 
+      false
+    else
+      current_site.style || 'style_01'
+    end
   end
 
 end

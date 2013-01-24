@@ -4,13 +4,7 @@ class InfoController < ApplicationController
   end
 
   def terms
-    @property = current_site.try(:properties).try(:first)
+    @property = current_site.user.properties.first
     @articles = @property.articles.where(group: 'terms')
-
-    if request.xhr?
-      render layout: false
-    else
-      render
-    end
   end
 end
