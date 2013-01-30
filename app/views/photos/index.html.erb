@@ -2,22 +2,24 @@
   <%= render partial: 'shared/welcome_message', locals: { message: '- Photos -' } %>
 <% end %>
 
-<!-- Start portfolio -->  
+<!-- Start portfolio -->
 <section class="portfolio">
   <div class="container">
-    <div class="row">                                                                                       
-      <div class="span12">                        
+    <div class="row">
+      <div class="span12">
         <ul class="thumbnails">
-          <% (1..10).each do | photo_index | %>
+          <% @property.photos.each do | photo | %>
             <li class="span2">
               <div class="thumbnail">
                 <div class="portfolio-item">
-                  <img src="/assets/property/thumbs/<%= "%02d" % photo_index %>.jpg" alt="">
+                  <%= image_tag photo.image.thumb.url %>
                   <div class="folio-body">
                     <div class="folio-info">
                     </div>
                     <div class="folio-zoom">
-                      <a href="/assets/property/<%= "%02d" % photo_index %>.jpg" rel="prettyPhoto[pp_gal]"><i class="icon-plus"></i> Zoom</a>
+                      <%= link_to photo.image.url, rel: 'prettyPhoto[pp_gal]' do %>
+                        <i class="icon-plus"></i> Zoom
+                      <% end %>
                     </div>
                   </div>
                 </div>
@@ -29,6 +31,6 @@
       </div>
     </div>
   </div>
-</section> 
-<!-- End portfolio -->   
+</section>
+<!-- End portfolio -->
 

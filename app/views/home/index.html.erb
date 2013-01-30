@@ -7,7 +7,7 @@
     <div class="row">
       <div class="span8">
         <div class="img-polaroid portfolio-item">
-          <img src="/assets/property/01.jpg" />
+          <%= image_tag @property.photos.first.image.url %>
           <div class="folio-body">
             <div class="folio-info">
               <h5><%= @property.title %></h5>

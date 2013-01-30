@@ -24,6 +24,8 @@ gem 'configatron'
 
 gem 'mail_form' # gem helps to create contact form
 
+gem 'carrierwave'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'
