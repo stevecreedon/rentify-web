@@ -21,7 +21,7 @@ role :db,  hostname, :primary => true # This is where Rails migrations will run
 namespace :deploy do
   desc "Creates symlink to admin app uploaded images"
   task :symlink_to_uploads, :roles => :app do
-    run "ln -s /var/www/kuztusadmin/shared/uploads/ /var/www/kuztusweb/shared/uploads"
+    run "rm -rf /var/www/kuztusweb/shared/uploads && ln -s /var/www/kuztusadmin/shared/uploads/ /var/www/kuztusweb/shared"
   end
 end
 
