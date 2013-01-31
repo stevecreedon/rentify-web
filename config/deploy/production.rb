@@ -25,5 +25,5 @@ namespace :deploy do
   end
 end
 
-after 'deploy:symlink', 'deploy:symlink_to_uploads'
+after 'deploy:create_symlink', 'deploy:symlink_to_uploads'
 
