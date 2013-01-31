@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: git://github.com/fragallia/capistrano-tools.git
-  revision: 159827de0e36cae43898f5ac03efbaa0bd88d5bc
+  revision: ff363ae6c98f5eaf37883270ca493f7983f6a486
   specs:
     capistrano-tools (0.0.1)
       capistrano
