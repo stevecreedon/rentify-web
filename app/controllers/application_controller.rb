@@ -5,6 +5,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_site
 
+  before_filter :load_property
+
   layout :set_layout
 
   def site_not_found_error
@@ -27,6 +29,10 @@ protected
   end
 
 private
+
+  def load_property
+    @property = current_site.user.properties.first.decorate
+  end
 
   def set_layout
     if request.xhr? 

@@ -4,7 +4,6 @@ class InfoController < ApplicationController
   end
 
   def terms
-    @property = current_site.user.properties.first
-    @articles = @property.articles.where(group: 'terms')
+    @articles = @property.articles.where(group: 'terms').decorate
   end
 end

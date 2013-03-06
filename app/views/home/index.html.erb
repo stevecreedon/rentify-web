@@ -11,7 +11,7 @@
           <div class="folio-body">
             <div class="folio-info">
               <h5><%= @property.title %></h5>
-              <%= @property.description %>
+              <%= @property.description_to_html.html_safe %>
             </div>
             <div class="folio-zoom">
               <%= link_to 'Show all photos', photos_path %>
@@ -28,7 +28,7 @@
       <div class='span12'>
         <h4>Description</h4>
         <hr>
-        <%= @property.description %>
+        <%= @property.description_to_html.html_safe %>
       </div>
     </div>
   </div>

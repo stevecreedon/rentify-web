@@ -16,7 +16,7 @@
       <div class="span9">
         <% @articles.each do | article | %>
           <h3><%= article.title %></h3>
-          <%= article.description %>
+          <%= article.description_to_html.html_safe %>
         <% end %>
         <hr>
         <div id='calendar' data-path='<%= @calendar.path %>'></div>

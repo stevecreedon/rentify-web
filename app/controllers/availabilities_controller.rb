@@ -1,7 +1,6 @@
 class AvailabilitiesController < ApplicationController
   def index
-    @property = current_site.user.properties.first
     @calendar = @property.calendars.where(provider: 'google').first
-    @articles = @property.articles.where(group: 'availability')
+    @articles = @property.articles.where(group: 'availability').decorate
   end
 end

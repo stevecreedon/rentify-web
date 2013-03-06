@@ -26,6 +26,10 @@ gem 'mail_form' # gem helps to create contact form
 
 gem 'carrierwave'
 
+gem 'bluecloth'
+
+gem 'draper'
+
 group :test, :development do
   gem 'rspec-rails'
   gem 'capybara'

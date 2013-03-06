@@ -15,9 +15,9 @@
       </div>
       <div class="span9">
         <h3>How to find us</h3>
-        <% @property.directions.each do | direction | %>
+        <% @property.directions.decorate.each do | direction | %>
           <h3><%= direction.title %></h3>
-          <%= direction.description %>
+          <%= direction.description_to_html.html_safe %>
         <% end %>
       </div>
     </div>
